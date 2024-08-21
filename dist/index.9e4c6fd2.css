@@ -1,0 +1,26 @@
+.header {
+  border: 1px solid #000;
+  justify-content: space-between;
+  display: flex;
+}
+
+.logo {
+  width: 200px;
+}
+
+.nav-items {
+  align-items: center;
+  display: flex;
+}
+
+.nav-items > ul {
+  margin-right: 20px;
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-items > ul > li {
+  margin: 10px;
+  padding: 10px;
+}
+/*# sourceMappingURL=index.9e4c6fd2.css.map */
