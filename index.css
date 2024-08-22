@@ -17,9 +17,37 @@
     display: flex;
     list-style-type: none;
     margin-right:20px;
+    font-size: 24px;
 }
 
 .nav-items > ul > li{
     padding: 10px;
     margin: 10px;
+}
+
+.res-card{
+    width: 300px;
+    height: 300px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.res-container{
+    
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.res-card:hover{
+    border: 1px solid black;
+    
+}
+
+.search{
+    padding: 10px;
+    cursor: pointer;
+}
+
+.res-logo{
+    width: 100%;
 }

@@ -15,6 +15,7 @@
 
 .nav-items > ul {
   margin-right: 20px;
+  font-size: 24px;
   list-style-type: none;
   display: flex;
 }
@@ -22,5 +23,30 @@
 .nav-items > ul > li {
   margin: 10px;
   padding: 10px;
+}
+
+.res-card {
+  width: 300px;
+  height: 300px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.res-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.res-card:hover {
+  border: 1px solid #000;
+}
+
+.search {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.res-logo {
+  width: 100%;
 }
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
