@@ -91,3 +91,5 @@ const RestaurentCard = ({resName,cuisines}) => {
         </div>
     )
 }
+
+Read raect file structure.
