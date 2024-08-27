@@ -4,8 +4,6 @@ const resList = [
         "id": "405798",
         "name": "Chinese Wok",
         "cloudinaryImageId": "e0839ff574213e6f35b3899ebf1fc597",
-        "locality": "Malleshwaram",
-        "areaName": "Malleshwaram",
         "costForTwo": "₹250 for two",
         "cuisines": [
           "Chinese",
@@ -14,79 +12,8 @@ const resList = [
           "Desserts"
         ],
         "avgRating": 4.4,
-        "parentId": "61955",
         "avgRatingString": "4.4",
-        "totalRatingsString": "1K+",
-        "sla": {
-          "deliveryTime": 54,
-          "lastMileTravel": 4.7,
-          "serviceability": "SERVICEABLE",
-          "slaString": "50-55 mins",
-          "lastMileTravelString": "4.7 km",
-          "iconType": "ICON_TYPE_EMPTY"
-        },
-        "availability": {
-          "nextCloseTime": "2024-08-24 22:00:00",
-          "opened": true
-        },
-        "badges": {
-          
-        },
-        "isOpen": true,
-        "type": "F",
-        "badgesV2": {
-          "entityBadges": {
-            "imageBased": {
-              
-            },
-            "textBased": {
-              
-            },
-            "textExtendedBadges": {
-              
-            }
-          }
-        },
-        "aggregatedDiscountInfoV3": {
-          "header": "ITEMS",
-          "subHeader": "AT ₹199"
-        },
-        "differentiatedUi": {
-          "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
-          "differentiatedUiMediaDetails": {
-            "mediaType": "ADS_MEDIA_ENUM_IMAGE",
-            "lottie": {
-              
-            },
-            "video": {
-              
-            }
-          }
-        },
-        "reviewsSummary": {
-          
-        },
-        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
-        "restaurantOfferPresentationInfo": {
-          
-        },
-        "externalRatings": {
-          "aggregatedRating": {
-            "rating": "4.2",
-            "ratingCount": "10+"
-          },
-          "source": "GOOGLE",
-          "sourceIconImageId": "v1704440323/google_ratings/rating_google_tag"
-        },
-        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
       },
-      "analytics": {
-        
-      },
-      "cta": {
-        "link": "https://www.swiggy.com/restaurants/chinese-wok-malleshwaram-bangalore-405798",
-        "type": "WEBLINK"
-      }
     },
     {
       "info": {

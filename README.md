@@ -93,3 +93,23 @@ const RestaurentCard = ({resName,cuisines}) => {
 }
 
 Read raect file structure.
+
+# React Hooks  -Created by facebook
+(Normal JS Utility Functions)
+
+- useState()   - Superpowerfull State variable   - we have import it from react as a named import. - It create a state variable which maintains the state of the variable. 
+const [nameofVariable,setFunction] = useState([valueInsideArrayVariable]);
+
+it is just destructingof array u can write as:
+const arr = useState([valueInsideArrayVariable]);
+const [nameofVariable,setFunction] = arr;
+or as 
+const arr = useState([valueInsideArrayVariable]);
+nameofVariable = arr[0];
+setFunction = arr[1];
+
+now use it as a normal variable;
+We cannot update the state variable as a normal variale we need to update that variable using setFunction.
+Whenever a state variable change react will rerender my component.
+
+- useEffect()
