@@ -70,4 +70,13 @@
   height: 450px;
   margin: 10px;
 }
+
+.login-btn {
+  cursor: pointer;
+  padding: 0 25px;
+}
+
+.filter {
+  display: flex;
+}
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
