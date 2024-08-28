@@ -113,3 +113,8 @@ We cannot update the state variable as a normal variale we need to update that v
 Whenever a state variable change react will rerender my component.
 
 - useEffect()
+it accepts two parameters first is call back functionn  second is depedency array
+this call back function will be called after your component renders. If it is written in body component the function will be called after body renders
+
+- fetch()
+This function returns a promise.
