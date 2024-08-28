@@ -25,19 +25,27 @@
   padding: 10px;
 }
 
-.res-card {
-  width: 300px;
-  margin: 5px;
-  padding: 5px;
-}
-
 .res-container {
   flex-wrap: wrap;
   display: flex;
 }
 
+.res-card {
+  border-radius: 10px;
+  width: 220px;
+  height: 450px;
+  margin: 10px;
+  padding: 5px;
+}
+
 .res-card:hover {
   border: 1px solid #000;
+}
+
+.res-logo {
+  border-radius: 10px;
+  width: 100%;
+  height: 40%;
 }
 
 .search {
@@ -45,12 +53,21 @@
   padding: 10px;
 }
 
-.res-logo {
-  width: 100%;
-}
-
 .filter-btn {
   cursor: pointer;
+  margin: 10px;
+}
+
+.shimmer-container {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.shimmer-card {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  width: 220px;
+  height: 450px;
   margin: 10px;
 }
 /*# sourceMappingURL=index.9e4c6fd2.css.map */

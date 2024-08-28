@@ -1,6 +1,8 @@
 import RestaurantCard from "../RestaurantCard";
 //import resList from "../components/Utils/mockData";
 import { useState,useEffect } from "react";
+import Shimmer from "./Shimmer";
+import { HANU_URL, SIRSA_URL } from "./Utils/constants";
 
 
 const Body = () =>{
@@ -11,7 +13,8 @@ const Body = () =>{
     },[]);
     
     const fetchData = async () => {
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=29.5320731&lng=75.03177339999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch(SIRSA_URL);
+        //const data = await fetch(HANU_URL);
         
         const json = await data.json();
         console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
@@ -19,6 +22,9 @@ const Body = () =>{
         setlistOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
 
+    if(listOfRestaurants.length===0){
+        return <Shimmer/>
+    }
 
     return(
         <div className="body">
