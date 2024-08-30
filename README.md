@@ -136,3 +136,7 @@ This function returns a promise.
 - we will be using REACT ROUTER DOM LIBRARY.
 - npm install react-router-dom
 - Read from Notes.
+
+# 2 Types of Routing
+- Client Side Routing - It doest reload whole page , it just change the component that is why it is called single page application.
+- Server Side Routing - It reloads the whole page

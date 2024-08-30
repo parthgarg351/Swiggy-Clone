@@ -16,11 +16,11 @@ const Body = () =>{
     },[]);
     
     const fetchData = async () => {
-        const data = await fetch(SIRSA_URL);
-        //const data = await fetch(HANU_URL);
+        //const data = await fetch(SIRSA_URL);
+        const data = await fetch(HANU_URL);
         
         const json = await data.json();
-        console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        //console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         //Optional Chaining
         setlistOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setfilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
