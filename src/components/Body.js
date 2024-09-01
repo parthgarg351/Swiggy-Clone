@@ -3,6 +3,7 @@ import RestaurantCard from "../RestaurantCard";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { HANU_URL, SIRSA_URL } from "./Utils/constants";
+import { Link } from "react-router-dom";
 
 
 const Body = () =>{
@@ -55,7 +56,7 @@ const Body = () =>{
             <div className="res-container">
                 {
                   filteredRestaurants.map((restaurent)=>{
-                    return <RestaurantCard key={restaurent.info.id} resData={restaurent}/>;
+                    return <Link key={restaurent.info.id} to={"/restaurants/"+restaurent.info.id}><RestaurantCard key={restaurent.info.id} resData={restaurent}/></Link>;
                   })
                 }
             </div>
