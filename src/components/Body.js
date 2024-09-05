@@ -2,7 +2,7 @@ import RestaurantCard from "../RestaurantCard";
 //import resList from "../components/Utils/mockData";
 import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { HANU_URL, SIRSA_URL } from "./Utils/constants";
+import { HANU_URL, JAIPUR_URL, SIRSA_URL } from "./Utils/constants";
 import { Link } from "react-router-dom";
 
 
@@ -17,8 +17,9 @@ const Body = () =>{
     },[]);
     
     const fetchData = async () => {
-        //const data = await fetch(SIRSA_URL);
-        const data = await fetch(HANU_URL);
+        const data = await fetch(SIRSA_URL);
+        //const data = await fetch(HANU_URL);
+        //const data = await fetch(JAIPUR_URL);
         
         const json = await data.json();
         //console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);

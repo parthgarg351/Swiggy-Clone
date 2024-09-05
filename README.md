@@ -140,3 +140,9 @@ This function returns a promise.
 # 2 Types of Routing
 - Client Side Routing - It doest reload whole page , it just change the component that is why it is called single page application.
 - Server Side Routing - It reloads the whole page
+
+# Unmounting
+- We can add a return statement in useeffect() to give unmount function as
+- return ()=>{
+    clearinterval(name of function)
+}
