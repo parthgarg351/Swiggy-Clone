@@ -146,3 +146,66 @@ This function returns a promise.
 - return ()=>{
     clearinterval(name of function)
 }
+
+# We should always follow sngle responsibility principle.
+
+# We should always maintain modularity in our code which means break our code into smal small modules so our code becomes more maintainable amd testable 
+
+# Custom Hooks
+- We will be custom hook for fetching data from api.
+- const RestaurantMenu = () =>{
+    
+    const [resInfo,setresInfo] = useState(null);
+
+    const {resId}  = useParams();
+
+    useEffect(()=>{
+        fetchMenu();
+    },[]);
+
+    const fetchMenu = async () =>{
+        const data = await fetch(MENU_API+resId);
+        const json = await data.json();
+        //console.log(json.data.cards[2]);
+        setresInfo(json.data);
+    }
+
+- We will be creating a seperate file inside utils .
+- Always start you hook name with use.
+
+const RestaurantMenu = () =>{
+
+    const {resId}  = useParams();
+
+    const resInfo = useRestaurantMenu(resId);
+
+    }
+
+- In that new file write
+- const useRestaurantMenu = (resId) => {
+    const [resInfo, setresInfo] = useState(null);
+    
+    useEffect(() => {
+        fetchData();
+    }, []);
+
+    const fetchData = async () => {
+        const data = await fetch(MENU_API + resId);
+        const json = await data.json();
+        setresInfo(json.data);
+    };
+    
+    return resInfo;
+}
+
+export default useRestaurantMenu;
+
+# Using Parcel is not always good as it makes our code slow by making a very big file.
+ 
+ - So we will be using the method called chunking (code splitting,dynamic bundling,lazy loading,on demand loadding ,dynamic import) which we bundle our files into small chunks.
+- We will be creating seprate bundle for grocery
+- If we use Lazy loading then our Grocery code will not there in our main app , it will only be loaded when open it
+- We will use something callled lazy() , it is imported from react as a named import.
+- const Grocery = lazy(()=>import("./Grocery"));
+- Somoetimes it starts giving error while useing lazy loading because it is not able to fetch the component, that fast react is rendering, so we will be using suspense.
+- <Suspense fallback={<h1>Loading..</h1>}><Grocery/></Suspense>  fallback is used to show some message when our component is loading.

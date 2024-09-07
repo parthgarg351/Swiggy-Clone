@@ -28,11 +28,12 @@ class UserClass extends React.Component{
     }
 
     componentDidUpdate(){
-
+        //It is called when component is updated
     }
 
     componentWillUnmount(){
-        
+        //It is used to clean up the code
+        //It is called when component is removed from the webpage
     }
     
 

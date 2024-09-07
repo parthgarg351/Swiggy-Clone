@@ -4,7 +4,7 @@ import { useState,useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { HANU_URL, JAIPUR_URL, SIRSA_URL } from "./Utils/constants";
 import { Link } from "react-router-dom";
-
+import useOnlineStatus from "./Utils/useOnlineStatus";
 
 const Body = () =>{
     const [listOfRestaurants,setlistOfRestaurants] = useState([]);
@@ -17,9 +17,9 @@ const Body = () =>{
     },[]);
     
     const fetchData = async () => {
-        const data = await fetch(SIRSA_URL);
+        //const data = await fetch(SIRSA_URL);
         //const data = await fetch(HANU_URL);
-        //const data = await fetch(JAIPUR_URL);
+        const data = await fetch(JAIPUR_URL);
         
         const json = await data.json();
         //console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
@@ -28,6 +28,12 @@ const Body = () =>{
         setfilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
+
+    const onlineStatus = useOnlineStatus();
+    if(onlineStatus===false){
+        return <h1>You are offline. Please check your internet connection.</h1>
+    }
+    
 
     if(listOfRestaurants.length===0){
         return <Shimmer/>
