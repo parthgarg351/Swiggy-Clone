@@ -209,3 +209,35 @@ export default useRestaurantMenu;
 - const Grocery = lazy(()=>import("./Grocery"));
 - Somoetimes it starts giving error while useing lazy loading because it is not able to fetch the component, that fast react is rendering, so we will be using suspense.
 - <Suspense fallback={<h1>Loading..</h1>}><Grocery/></Suspense>  fallback is used to show some message when our component is loading.
+
+# Scss and Sass and Style Component
+- It give super powers to css.
+- It is not used in Production ,or in idustrial level projects.
+
+# There are many frameworks like  Material UI and Ant Design ,chakra UI ,Bootstrap
+
+# We will be using tailwind css.
+
+- npm install -D tailwindcss postcss
+- postcss is nothing but a tool that transforms css in js , tailwind uses postcss behind the scene.
+- npx tailwindcss init , this will create a tailwind.config.js file.
+- now we have to add config file postcss as .postcssrc
+
+- write this in .postcssrc to tell postcss to use tailwind.
+{
+  "plugins": {
+    "tailwindcss": {}
+  }
+}
+
+- So parcel will use postcss to understand tailwind css.
+
+- now in tailwind.config.js file we  will write to tell where can i use tailwind css.
+content: [
+    "./src/**/*.{html,js,ts,jsx,tsx}",
+  ],
+
+- After this in index.css file we will write to import tailwind.
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
