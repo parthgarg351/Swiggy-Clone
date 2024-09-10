@@ -24,8 +24,8 @@ const Body = () =>{
         const json = await data.json();
         //console.log(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
         //Optional Chaining
-        setlistOfRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setfilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setlistOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setfilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
     }
 
@@ -41,26 +41,28 @@ const Body = () =>{
 
     return(
         <div className="body">
-            <div className="filter">
-                <div className="search">
-                    <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+            <div className="filter flex ">
+                <div className="m-4 p-4">
+                    <input type="text" className="border border-solid border-black" value={searchText} onChange={(e)=>{
                         setsearchText(e.target.value);
                     }}></input>
-                    <button className="search-btn" onClick={()=>{
+                    <button className="px-4 py-1 bg-green-100 m-4 rounded-lg" onClick={()=>{
                         let filteredRes2 = listOfRestaurants.filter((res)=>{
                            return res.info.name.toLowerCase().includes(searchText.toLowerCase());
                         });
                         setfilteredRestaurants(filteredRes2);
                     }}>Search</button>
                 </div>
-                <button className="filter-btn" onClick={()=>{
-                    let filteredRes = listOfRestaurants.filter((res)=>{
-                        return res.info.avgRatingString >4.5;
-                    });
-                    setfilteredRestaurants(filteredRes);
+                <div className="m-4 p-4 flex items-center"> 
+                    <button className="filter-btn px-4 py-1 bg-gray-100 rounded-lg" onClick={()=>{
+                        let filteredRes = listOfRestaurants.filter((res)=>{
+                            return res.info.avgRatingString >4.5;
+                        });
+                        setfilteredRestaurants(filteredRes);
                     }}>Top Rated Restaurants</button>
+                </div>
             </div>
-            <div className="res-container">
+            <div className="res-container flex flex-wrap">
                 {
                   filteredRestaurants.map((restaurent)=>{
                     return <Link key={restaurent.info.id} to={"/restaurants/"+restaurent.info.id}><RestaurantCard key={restaurent.info.id} resData={restaurent}/></Link>;
