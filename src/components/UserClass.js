@@ -1,5 +1,6 @@
 import React from "react";
 import User from "./User";
+import UserContext from "./Utils/UserContext";
 
 class UserClass extends React.Component{
     
@@ -42,6 +43,16 @@ class UserClass extends React.Component{
         const {name,location,avatar_url} = this.state.userInfo
 
         return <div className="classy">
+        <div className="font-bold text-lg">
+            LoggedIn User : 
+            <UserContext.Consumer>
+                {
+                    ({loggedInUser})=>{
+                        return <h1>{loggedInUser}</h1>
+                    }
+                }
+            </UserContext.Consumer>
+        </div>
         <h1>Count : {this.state.count}</h1>
         <h1>Count : {this.state.count2}</h1>
         <button onClick={()=>{

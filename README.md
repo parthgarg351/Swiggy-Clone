@@ -241,3 +241,12 @@ content: [
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+# Reading lifting the state up from child to parent from react website
+
+# Props Drilling
+- It is a situation where we have to pass props from one component to another component to another component and so on.
+- It is not a good practice to do this.
+- We will be using context API to solve this problem.
+
+# Use Context API

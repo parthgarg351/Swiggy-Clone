@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { CDN_URL } from "./components/Utils/constants";
+import UserContext from "./components/Utils/UserContext";
 
 const StyleCard = {
     backgroundColor: "#f0f0f0",
@@ -6,6 +8,7 @@ const StyleCard = {
 
 const RestaurentCard = (props) => {
     const {resData} = props;
+    const {loggedInUser} = useContext(UserContext);
    // const {cloudinaryImageId,name,cuisines,avgRatingString} = resData.info;
     return(
         <div className="res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-300" /*style={StyleCard}*/>
@@ -14,6 +17,7 @@ const RestaurentCard = (props) => {
             <h4>{resData.info.cuisines.join(", ")}</h4>
             <h4>{resData.info.avgRatingString+" Star"}</h4>
             <h4>{resData.info.costForTwo}</h4>
+            <h4>User: {loggedInUser}</h4>
         </div>
     )
 }
@@ -22,7 +26,7 @@ export const withPromotedLabel=(RestaurentCard)=>{
     return(props)=>{
         return(
             <div>
-                <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted69</label>
+                <label className="absolute bg-black text-white m-2 p-2 rounded-lg">Promoted</label>
                 <RestaurentCard {...props}/>
             </div>
         )

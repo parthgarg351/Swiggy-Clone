@@ -1,4 +1,4 @@
-import React, { lazy , Suspense } from "react";
+import React, { lazy , Suspense, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -7,6 +7,7 @@ import AboutUs from "./AboutUs";
 import Contact from "./Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
+import UserContext from "./components/Utils/UserContext.js";
 //import Grocery from "./components/Grocery.js";
  
 
@@ -20,11 +21,26 @@ import RestaurantMenu from "./components/RestaurantMenu";
 const Grocery = lazy(()=>import("./components/Grocery.js"));
 
 const AppLayout = () => {
+
+    const[userInfo,setuserInfo] = useState();
+
+    useEffect(()=>{
+        //Make an API call to get user info
+        const data = {
+            name : "Parth Garg",
+        }
+        
+        setuserInfo(data.name);
+    },[])
+
+    console.log({userInfo});
     return(
+        <UserContext.Provider value={{loggedInUser : userInfo , setuserInfo}}>
         <div className="app">
             <Header/>
             <Outlet/>
         </div>
+        </UserContext.Provider>
     )
 }
 
