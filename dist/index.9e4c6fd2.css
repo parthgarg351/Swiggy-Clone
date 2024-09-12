@@ -260,6 +260,10 @@ img, video {
   margin: 1rem;
 }
 
+.m-auto {
+  margin: auto;
+}
+
 .mx-\[4\.5rem\] {
   margin-left: 4.5rem;
   margin-right: 4.5rem;
@@ -318,10 +322,6 @@ img, video {
 
 .w-auto {
   width: auto;
-}
-
-.border-collapse {
-  border-collapse: collapse;
 }
 
 .cursor-pointer {
@@ -399,6 +399,11 @@ img, video {
   padding: 1rem;
 }
 
+.px-2 {
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
@@ -417,11 +422,6 @@ img, video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-
-.px-2 {
-  padding-left: .5rem;
-  padding-right: .5rem;
 }
 
 .pt-2 {
